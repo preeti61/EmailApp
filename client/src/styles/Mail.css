@@ -1,0 +1,34 @@
+.mail{
+    display: flex;
+    overflow: scroll;
+    flex-direction: column;
+    flex: 0.8;
+    margin-left:20px;
+}
+
+.mail__icons{
+    display: flex;
+}
+.mail__body
+{
+    display: flex;
+    flex-direction: column;
+   
+}
+.mail__title
+{
+    margin: 30px 5px;
+    display: flex;
+    align-content: space-between;
+}
+.mail__title>p{
+    color:grey
+}
+.mail__content{
+  display: flex;
+  flex-direction: column;
+}
+.mail__content>.header{
+    display: flex;
+
+}

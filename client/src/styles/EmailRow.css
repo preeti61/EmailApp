@@ -1,0 +1,49 @@
+.email__row{
+    display:flex;
+    flex:1;
+    align-content: space-between;
+    align-items: center;
+    padding: 3px;
+    margin-top: 5px;
+    height: 25px;
+    background-color: whitesmoke;
+}
+.email__row__parent{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.email__row:hover{
+    box-shadow: 2px 2px 3px 0px  black;
+}
+.email__row>.icons{
+    display: flex;
+    flex:0.2
+}
+
+.email__row__subject{
+    flex:0.8;
+    display: flex;
+    overflow: hidden;
+    font-size: 18px;
+    background-color: whitesmoke;
+    height: 25px;
+}
+.email__row__subject>h4{
+    flex:0.3;
+}
+.email__row__subject>strong{
+    flex:0.1;
+}
+.row__body{
+    flex:0.6;
+    display: flex;
+}
+.row__body>strong{
+    flex:0.2;
+}
+.row__body>p{
+    flex:0.8;
+    overflow: hidden;
+    color:gray
+}

@@ -1,0 +1,42 @@
+
+.change__profile__body{
+display: flex;
+flex-direction: column;    
+justify-content: center;
+margin:auto;
+padding:40px 200px;
+background-color: #f2f2f0;
+box-shadow:-10px -10px 5px #aaaaaa ;
+}
+
+.fa{
+  font-size: 300px;
+  margin:auto;
+  flex:1;
+}
+
+.update__form{
+    margin-top:25px;
+     margin-left:auto;
+     flex:1;
+     color: #c04b37 ;
+     padding: auto 40px;
+     align-items: center;
+}
+.update__button>button{
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 30px;
+    box-shadow: -2px 2px 5px black;
+    font-size: large;
+    margin-bottom: 50px;
+    color: #c04b37 ;
+    outline-width: 0;
+}
+
+.circular__profile{
+   border-radius:50%;
+   height:250px;
+   width: 250px;
+   flex:1;
+}

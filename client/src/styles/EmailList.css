@@ -1,0 +1,90 @@
+.email__list{
+    display: flex;
+    flex-direction: column;
+    flex:0.8;
+    overflow: scroll;
+}
+.email__list__settings{
+    display:flex;
+    flex:1;
+    max-height: 40px;
+    align-content: space-between;
+    margin-bottom: 20px;
+    background:whitesmoke;
+    padding: 5px;
+}
+.email__list__settings>.left{
+    flex:0.8
+}
+.email__list__section{
+    display: flex;
+    flex-direction: column;
+
+}
+.email__compose{
+    display: none;
+}
+.email__compose__show>form{
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0px;
+    right:0px;
+    background:rgb(58, 56, 56);
+    width:50vw;
+    height:60vh;
+    padding: 10px;
+    font-size: medium;
+}
+.compose__close{
+    color:rgb(240, 235, 226);
+   align-self: flex-end;
+}
+.label{
+    display: flex;
+    align-content: space-between;
+    margin-top:20px ;
+   
+}
+.label>input,.label>textarea{
+   flex:0.8;
+   padding: 5px;
+   outline: goldenrod;
+}
+.label>textarea{
+   max-height:200px;
+   min-height: 200px;
+}
+.label>label{
+    flex:0.2;
+    color:rgb(238, 238, 200)
+}
+.label>input.body{
+  height:230px;
+  padding:0px;
+}
+.form__submit{
+    margin-top: 10px;
+    align-self: flex-end;
+}
+.error{
+    color:red;
+    font-size:16px;
+    font-weight: 100;
+
+}
+
+div.primary{
+    color: rgb(56, 153, 245);
+    border:2px solid  rgb(56, 153, 245);
+    padding:50px;
+    background-color: white;
+    height: 100px;
+    width: 90%;
+    margin-left:5px;
+    align-items: center;
+}
+.info{
+    color:black;
+}
+
