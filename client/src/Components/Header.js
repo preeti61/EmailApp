@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import EmailIcon from '@material-ui/icons/Email';
 
 import SettingsIcon from '@material-ui/icons/Settings';
-
+import MenuIcon from '@material-ui/icons/Menu';
 import {useSelector,useDispatch} from 'react-redux';
 import { FetchAvatar } from '../actions/avatar';
 
@@ -26,19 +26,24 @@ function Header(e) {
     return (
         <div className={userInfo?"header":"hide"}>
             <div className="header__left">
-               <IconButton>
-               <EmailIcon/>
-               </IconButton>
-                   
+
+                <div className="ham__bar" onClick={()=>{
+                    const x=document.getElementById('menu__bar');
+                    if(x.className=="sidebar")
+                    x.className+=" responsive";
+                    else
+                    x.className="sidebar"
+                }}>
+                 <MenuIcon/>
+                </div>
+               
                    </div>
            <div className="header__center">
-                <h1 className="header__name">Email</h1>
-                <h1>App</h1>
-                </div> 
-            <div className="header__right">
-           
-           
-                <div id="icon__active2" >
+                <IconButton >
+               <EmailIcon/>
+               </IconButton>
+            <p className="app__name">Email App</p>           
+              <div id="icon__active2" >
              <Avatar src={avatar?avatar:source}/>
              <Link to="/changeavatar">Add/Change</Link>
              <div>{userInfo.name}</div>
