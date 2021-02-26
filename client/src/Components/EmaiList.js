@@ -40,21 +40,6 @@ useEffect(() => {
                      <MoreVertIcon/>
                  </IconButton>
                </div>
-               <div className="right"> 
-                     <IconButton>
-                     <ChevronLeftIcon/>
-                     </IconButton>
-                     <IconButton>
-                     <ChevronRightIcon/>
-                     </IconButton>
-                     <IconButton>
-                     <KeyboardHideIcon/>
-                     </IconButton>
-                     <IconButton>
-                    <SettingsIcon/>
-                     </IconButton>
-               </div>
-              
             </div>
          
             <div className="email__list__section">
@@ -67,14 +52,14 @@ useEffect(() => {
                 (
                     <div>
                   <Message class={"primary"}
-                 message={`Welcome ${userInfo.name}. Start by sending your first email to a registered user.`}
+                 message={`Welcome ${userInfo.name}. Start by sending  email to a registered user.`}
                 ins={"Click on compose"}/>
                     </div>
             
                 )}
-                  
+                   <Compose/>
               </div>
-             <Compose/>
+            
         </div>
     )
 }
