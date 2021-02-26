@@ -34,11 +34,13 @@ function Signin(props) {
                 <div className="label__signin">
                 <label htmlFor="email">Email</label>
                 <input type="email" name="email" ref={register({ required: true })}/>
+                {errors.email && <span className="error1">This field is required</span>}
                 </div>
                
                 <div className="label__signin" >
                 <label>Password</label>
                 <input type="password" name="password" ref={register({ required: true })}/>
+                {errors.password && <span className="error1">This field is required</span>}
                 </div>
                <div className="label__signin" >
                   <button className="primary" onClick={handleSubmit(onsubmit)} >SignIn</button>

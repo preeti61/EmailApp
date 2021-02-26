@@ -24,6 +24,9 @@ const setcompose=()=>{
                    
                          <CloseIcon className="compose__close" onClick={setcompose}/>
                     {opencompose.error &&<p className="error">{opencompose.error}</p>}
+                    <div className="header__label">
+                       <h2>Compose Email</h2>
+                    </div>
                      <div className="label">
                     <label htmlFor="to">To</label>
                      <input type="email" name="to" required={true}/>

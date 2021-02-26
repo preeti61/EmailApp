@@ -14,7 +14,8 @@
     padding: 5px;
 }
 .email__list__settings>.left{
-    flex:0.8
+    flex:0.8;
+    display: flex;
 }
 .email__list__section{
     display: flex;
@@ -40,16 +41,23 @@
     color:rgb(240, 235, 226);
    align-self: flex-end;
 }
+.header__label{
+    color:white;
+}
 .label{
     display: flex;
+    flex-direction: column;
     align-content: space-between;
     margin-top:20px ;
-   
+    justify-items: end;
 }
 .label>input,.label>textarea{
    flex:0.8;
    padding: 5px;
    outline: goldenrod;
+}
+.label>label{
+    flex:0.2;
 }
 .label>textarea{
    max-height:200px;
@@ -76,11 +84,11 @@
 
 div.primary{
     color: rgb(56, 153, 245);
-    border:2px solid  rgb(56, 153, 245);
     padding:50px;
     background-color: white;
     height: 100px;
     width: 90%;
+    max-width: fit-content;
     margin-left:5px;
     align-items: center;
 }
@@ -88,3 +96,13 @@ div.primary{
     color:black;
 }
 
+@media screen and (max-width:680px){
+
+    .email__list{
+        flex:1;
+    }
+    .email__compose__show>form{
+       height:80vh;
+       width: 90%;
+    }
+}
