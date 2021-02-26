@@ -22,8 +22,9 @@ function Sidebar() {
        dispatch(opencompose());
      }
     return (
-        <div className="sidebar">
+        <div className="sidebar" id="menu__bar">
         <Button className="compose" onClick={setcompose}  startIcon={<AddIcon/>} >COMPOSE</Button>
+        <br></br>
          <SidebarOption Icon={InboxIcon} num={mailList.length} text="Input" selected={true}/>
          <SidebarOption Icon={DraftsIcon} num={0} text="Drafts"/>
          <SidebarOption Icon={SendIcon} num={0} text="Sent"/>
