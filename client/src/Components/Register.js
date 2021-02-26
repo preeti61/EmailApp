@@ -19,7 +19,7 @@ function Register(props) {
         const name=data.name;
         const email=data.email;
         const password=data.password;
-        const cpassword=data.cpassword;
+        
        dispatch(RegisterUser(email,password,name));
        
     }
@@ -45,23 +45,19 @@ function Register(props) {
                 <label>Name</label>
                 <input type="text" name="name" ref={register({ required: true })}/>
                 </div>
-                {errors.name && <span className="error">This field is required</span>}
+                {errors.name && <span className="error1">This field is required</span>}
                 <div className="label__signin">
                 <label htmlFor="email">Email</label>
                 <input type="email" name="email" ref={register({ required: true })}/>
                 </div>
-                {errors.email && <span>This field is required</span>}
+                {errors.email && <span className="error1">This field is required</span>}
                 <div className="label__signin">
                 <label>Password</label>
                 <input type="password" name="password" ref={register({ required: true })}/>
                 </div>
-                {errors.password && <span>This field is required</span>}
+                {errors.password && <span className="error1">This field is required</span>}
                 <div className="label__signin">
-                <label>Confirm Password</label>
-                <input type="password" name="cpassword" ref={register({ required: true })}/>
-                </div>
-                {errors.cpassword && <span>This field is required</span>}
-               <div className="label__signin">
+             
                  <button className="primary" >Register</button>
                    
                </div>
