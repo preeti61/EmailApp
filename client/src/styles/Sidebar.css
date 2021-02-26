@@ -40,3 +40,25 @@
     align-items: center;
     margin-left: 30px;
 }
+
+
+@media screen and (max-width:680px)
+{
+    .sidebar{
+        display: none;
+    }
+    .sidebar.responsive{
+             display: block;
+             float: inline-start;
+    }
+    .compose{
+        padding: 5px;
+        border-radius: 30px;
+        box-shadow: -2px 2px 5px black;
+        font-size: medium;
+        color: #c04b37 ;
+      
+    }
+
+    
+}
