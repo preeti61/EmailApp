@@ -27,7 +27,7 @@
 
 .sidebar__option>h3{
     flex:0.8;
-    border-bottom: 2px solid rgb(99, 95, 95);
+    border-bottom: 2px solid rgb(150, 146, 146);
     color:yellowgreen
 }
 .sidebar__option:hover,.sidebar__option--active{

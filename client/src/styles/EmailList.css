@@ -20,6 +20,29 @@
 .email__list__section{
     display: flex;
     flex-direction: column;
+}
+.email__list{
+    display: flex;
+    flex-direction: column;
+    flex:0.8;
+    overflow: scroll;
+}
+.email__list__settings{
+    display:flex;
+    flex:1;
+    max-height: 40px;
+    align-content: space-between;
+    margin-bottom: 20px;
+    background:whitesmoke;
+    padding: 5px;
+}
+.email__list__settings>.left{
+    flex:0.8;
+    display: flex;
+}
+.email__list__section{
+    display: flex;
+    flex-direction: column;
 
 }
 .email__compose{

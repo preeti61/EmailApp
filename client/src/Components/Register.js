@@ -19,7 +19,7 @@ function Register(props) {
         const name=data.name;
         const email=data.email;
         const password=data.password;
-        const cpassword=data.cpassword;
+        
        dispatch(RegisterUser(email,password,name));
        
     }
