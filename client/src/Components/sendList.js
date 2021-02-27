@@ -12,15 +12,14 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import EmailRow from './EmailRow'
 import Message from '../Components/Message';
 import Compose from './Compose';
-import { FetchMail, FetchSendMail } from '../actions/mail';
-function EmaiList(props) {
-    const mailList=useSelector(state=>state.mailList)
+import {FetchSendMail} from '../actions/mail.js';
+export function SendList(props) {
+    const sendList=useSelector(state=>state.sentMailList)
     const userInfo=useSelector(state=>state.userData.userInfo);
     const dispatch=useDispatch();
   
-useEffect(async() => {
-   await dispatch(FetchMail());
-   await dispatch(FetchSendMail());
+useEffect(() => {
+   dispatch(FetchSendMail());
  
 }, [userInfo])
      
@@ -46,14 +45,14 @@ useEffect(async() => {
             <div className="email__list__section">
          
             
-                {mailList.length?( mailList.map(({to,from,subject,body,time,_id})=>{
+                {sendList.length?( sendList.map(({subject,body,time,_id})=>{
                    
-                       return <EmailRow key={_id} subject={subject} body={body} id={_id} props={props} time={time} redirect={"user"} />
+                       return <EmailRow key={_id} subject={subject} body={body} id={_id} props={props} time={time} redirect={"sentmails" } />
                 })):
                 (
                     <div>
                   <Message class={"primary"}
-                 message={`Welcome ${userInfo.name}. Start by sending  email to a registered user.`}
+                 message={`Welcome ${userInfo.name}. You haven't sent any mail yet.`}
                 ins={"Click on compose"}/>
                     </div>
             
@@ -65,4 +64,3 @@ useEffect(async() => {
     )
 }
 
-export default EmaiList

@@ -84,6 +84,36 @@ export const FetchMail=()=>async(dispatch,getState)=>{
     }
 }
 
+export const FetchSendMail=()=>async(dispatch,getState)=>{
+
+    dispatch({type:'FETCHING_SENT_MAIL'})
+
+    const {userData}=getState();
+   
+    const {userInfo}=userData;
+    try{
+       let {data}=await axios.get('/api/email/getSentMail',{
+            headers:{
+                authorization:`Bearer ${userInfo.token}`
+            }
+        });
+      const newdata=filterReducer(data);
+      
+        dispatch({
+            type:"FETCH__SENTMAIL__SUCCESS",
+            payload:data
+        })
+  
+        localStorage.setItem('sentmailList',JSON.stringify(data))
+}
+catch(e)
+    {
+        dispatch({
+            type:'FETCH__MAIL__FAIL',
+            payload:e
+        })
+    }
+}
 export const deleteMail=(id)=>async(dispatch,getState)=>{
 
     dispatch({

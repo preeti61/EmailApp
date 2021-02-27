@@ -5,13 +5,15 @@ import userManager from './Reducer/user.js';
 import mailListReducer from './Reducer/MailList.js';
 import avatarReducer from './Reducer/avatarReducer.js';
 import filterReducer from './Reducer/filterText.js'
+import sentMailReducer from './Reducer/SentMailReducer';
 const composeEnhancer=window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__||compose;
 const initialState={opencompose:0,
     userData:{
         userInfo:localStorage.getItem('userInfo')?JSON.parse(localStorage.getItem('userInfo')):null},
        mailList:localStorage.getItem('mailList')?JSON.parse(localStorage.getItem('mailList')):[],
         avatar:localStorage.getItem('avatar')?JSON.parse(localStorage.getItem('avatar')):null,
-        filterText:''
+        filterText:'',
+        mailList:localStorage.getItem('sentmailList')?JSON.parse(localStorage.getItem('sentmailList')):[]
     }
     
 const store=createStore(combineReducers({
@@ -19,8 +21,8 @@ const store=createStore(combineReducers({
     userData:userManager,
     mailList:mailListReducer,
     filterText:filterReducer,
-    avatar:avatarReducer
-   
+    avatar:avatarReducer,
+     sentMailList:sentMailReducer
 
 }),initialState,composeEnhancer(applyMiddleware(thunk)));
 export default store;

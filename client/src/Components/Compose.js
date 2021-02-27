@@ -1,6 +1,6 @@
 import React from 'react'
 import {useSelector,useDispatch }from 'react-redux';
-import {closecompose, FetchMail, sendMail} from '../actions/mail';
+import {closecompose, FetchMail, FetchSendMail, sendMail} from '../actions/mail';
 import CloseIcon from '@material-ui/icons/Close';
 function Compose() {
     const opencompose = useSelector(state => state.opencompose)
@@ -20,6 +20,7 @@ const setcompose=()=>{
                    e.target.elements.sub.value=""
                    e.target.elements.body.value=""
                    await dispatch(FetchMail())
+                   await dispatch(FetchSendMail())
                  }}>
                    
                          <CloseIcon className="compose__close" onClick={setcompose}/>

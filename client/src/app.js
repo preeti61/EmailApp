@@ -2,6 +2,7 @@ import React from 'react'
 import Signin from './Components/Signin.js';
 import Register from './Components/Register.js';
 import {useEffect,useState} from 'react';
+import   {SendList}  from './Components/sendList.js';
 import {useSelector} from 'react-redux';
 import './index.css';
 
@@ -31,6 +32,7 @@ import  ChangeAvatar from './Components/avatar.js';
           <PvtRoute path="/user" component={EmaiList} exact={true}/>
           <PvtRoute path="/mail/:id" component={Mail} exact={true}/>
           <PvtRoute path="/changeavatar" component={ChangeAvatar} exact={true}/>
+          <PvtRoute path="/sentmails"component={SendList}exact={true}/>
           <Route path="/"  component={Signin} exact={true}/>
          
           </Switch>

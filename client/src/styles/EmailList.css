@@ -60,8 +60,8 @@
     flex:0.2;
 }
 .label>textarea{
-   max-height:200px;
-   min-height: 200px;
+   max-height: 150px;
+   min-height:150px;
 }
 .label>label{
     flex:0.2;
@@ -74,6 +74,7 @@
 .form__submit{
     margin-top: 10px;
     align-self: flex-end;
+    padding: 10px;;
 }
 .error{
     color:red;

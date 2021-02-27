@@ -8,7 +8,7 @@ export const filterReducer=(data)=>{
     if(data.length===0)
     return data;
     data.sort((a,b)=>{
-        console.log(a.time<b.time)
+       
        return  a.time<b.time?1:-1;
     })
     return data;

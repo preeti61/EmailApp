@@ -11,26 +11,22 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import {Link} from 'react-router-dom';
 
 function Mail(props) {
+     
+    const redirect=props.location.search?props.location.search.split('?')[1]:'/';
    const userInfo = useSelector(state => state.userData.userInfo);
-    const mailList=useSelector(state=>state.mailList);
-   let curMail=(mailList.find((mail)=>{
+   const sendList=useSelector(state=>state.sentMailList)
+   let curMail=(sendList.find((mail)=>{
        return mail._id===props.match.params.id;
         
     }))
-   
-    if(curMail===undefined)
-    curMail={
-        subject:"Welcome Mail",
-        from:"Email@admin",
-        body:`Hi ${userInfo.name}. Let's get started . Send your first Mail but make sure the user is registered.`
-    };
+  
 
   
     return (
         <div className="mail">
              <div className="mail__icons">
-                  <IconButton onClick={()=>{props.history.push("/user")}}>
-                      <ArrowBackIcon to="/user"/>
+                  <IconButton onClick={()=>{props.history.push(`/${redirect}`)}}>
+                      <ArrowBackIcon />
                   </IconButton>
                   <IconButton>
                       <DeleteIcon/>

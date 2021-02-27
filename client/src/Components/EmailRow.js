@@ -5,11 +5,12 @@ import {useDispatch} from 'react-redux';
 import DeleteIcon from '@material-ui/icons/Delete';
 import LabelImportantIcon from '@material-ui/icons/LabelImportant';
 import { deleteMail,FetchMail } from '../actions/mail';
-function EmailRow({id,body,subject,time,props}) {
+function EmailRow({id,body,subject,time,props,redirect}) {
 
      const dispatch = useDispatch();
     const goToMail=()=>{
-        props.history.push(`/mail/${id}`)
+        props.history.push(`/mail/${id}?${redirect}`)
+     
     }
 
     const deletethis=async()=>{

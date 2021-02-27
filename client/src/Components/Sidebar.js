@@ -17,17 +17,22 @@ import {opencompose} from '../actions/mail.js';
 function Sidebar() {
   const userInfo=useSelector(state => state.userData.userInfo)
   const mailList=useSelector(state => state.mailList)
+  const sentMailList=useSelector(state => state.sentMailList)
           const dispatch = useDispatch();
      const setcompose=()=>{
        dispatch(opencompose());
      }
+
+
     return (
         <div className="sidebar" id="menu__bar">
         <Button className="compose" onClick={setcompose}  startIcon={<AddIcon/>} >COMPOSE</Button>
         <br></br>
-         <SidebarOption Icon={InboxIcon} num={mailList.length} text="Input" selected={true}/>
+         <Link to="/user" className="Link"><SidebarOption Icon={InboxIcon} num={mailList.length} text="Input"/></Link>
          <SidebarOption Icon={DraftsIcon} num={0} text="Drafts"/>
-         <SidebarOption Icon={SendIcon} num={0} text="Sent"/>
+         <Link className="Link" to="/sentmails" ><SidebarOption Icon={SendIcon} num={sentMailList.length} text="Sent" onClick={(e)=>{
+           console.log(e)
+         }}/></Link>
          <SidebarOption Icon={StarBorderIcon} num={0} text="Starred"/>
          <SidebarOption Icon={LabelImportantIcon} num={0} text="Important"/>
          <div className="sidebar__footer">

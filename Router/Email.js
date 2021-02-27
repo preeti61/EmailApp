@@ -44,7 +44,19 @@ EmailRouter.get('/getMail',isAuth,async(req,res)=>{
  
 })
 
+EmailRouter.get('/getSentMail',isAuth,async(req,res)=>{
 
+ 
+  try{
+    const emailList=await Mail.find({from:req.user.email})
+    res.send(emailList)
+  }
+  catch(e)
+  {
+    res.status(500).send(e)
+  }
+ 
+})
 EmailRouter.get('/delete/:id',async(req,res)=>{
 
   const id=req.params.id;
