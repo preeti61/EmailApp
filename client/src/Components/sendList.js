@@ -44,7 +44,7 @@ useEffect(() => {
          
             <div className="email__list__section">
          
-            
+                <h1>SENT MAIL</h1>
                 {sendList.length?( sendList.map(({subject,body,time,_id})=>{
                    
                        return <EmailRow key={_id} subject={subject} body={body} id={_id} props={props} time={time} redirect={"sentmails" } />
