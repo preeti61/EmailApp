@@ -45,7 +45,7 @@ useEffect(async() => {
          
             <div className="email__list__section">
          
-            
+            <h1>INBOX</h1>
                 {mailList.length?( mailList.map(({to,from,subject,body,time,_id})=>{
                    
                        return <EmailRow key={_id} subject={subject} body={body} id={_id} props={props} time={time} redirect={"user"} />
