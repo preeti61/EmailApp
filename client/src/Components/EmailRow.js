@@ -4,7 +4,7 @@ import '../styles/EmailRow.css';
 import {useDispatch} from 'react-redux';
 import DeleteIcon from '@material-ui/icons/Delete';
 import LabelImportantIcon from '@material-ui/icons/LabelImportant';
-import { deleteMail,FetchMail } from '../actions/mail';
+import { deleteMail,FetchMail, FetchSendMail } from '../actions/mail';
 function EmailRow({id,body,subject,time,props,redirect}) {
 
      const dispatch = useDispatch();
@@ -16,6 +16,7 @@ function EmailRow({id,body,subject,time,props,redirect}) {
     const deletethis=async()=>{
       await dispatch(deleteMail(id));
       await dispatch(FetchMail());
+         await dispatch(FetchSendMail());
     }
    
     return (
