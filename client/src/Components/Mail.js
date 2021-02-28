@@ -12,15 +12,17 @@ import {Link} from 'react-router-dom';
 
 function Mail(props) {
      
-    const redirect=props.location.search?props.location.search.split('?')[1]:'/';
+      const redirect=props.location.search?props.location.search.split('?')[1]:'/';
    const userInfo = useSelector(state => state.userData.userInfo);
+   const mailList=useSelector(state=>state.mailList);
    const sendList=useSelector(state=>state.sentMailList)
-   let curMail=(sendList.find((mail)=>{
+  
+   let list=redirect=="user"?mailList:sendList;
+   console.log(list)
+   let curMail=(list.find((mail)=>{
        return mail._id===props.match.params.id;
         
     }))
-  
-
   
     return (
         <div className="mail">
