@@ -18,7 +18,7 @@ function Mail(props) {
    const sendList=useSelector(state=>state.sentMailList)
   
    let list=redirect=="user"?mailList:sendList;
-   console.log(list)
+
    let curMail=(list.find((mail)=>{
        return mail._id===props.match.params.id;
         
