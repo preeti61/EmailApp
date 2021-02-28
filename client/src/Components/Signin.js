@@ -12,7 +12,7 @@ function Signin(props) {
     const onsubmit=(data)=>{
         const email=data.email;
         const password=data.password;
-        console.log(email,password)
+   
        dispatch(signin(email,password));
       
       
